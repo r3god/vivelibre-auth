@@ -5,7 +5,7 @@ public class Constants {
     throw new IllegalAccessException("Do not instantiate a utility class");
   }
 
-  public static String AUTH_URL = "http://localhost:8080/token";
+  public static String AUTH_URL = "http://authService:8080/token";
   public static String USER = "auth-vivelibre";
   public static String PASS = "password";
   public static String CONTENT_TYPE = "Content-Type";

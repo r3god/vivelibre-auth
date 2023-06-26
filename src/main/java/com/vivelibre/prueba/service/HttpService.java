@@ -16,10 +16,10 @@ import com.vivelibre.prueba.model.AuthResponse;
 @Service
 public class HttpService {
   
-  private RestTemplate restTemplate = new RestTemplate();
+  private final RestTemplate restTemplate = new RestTemplate();
 
   public AuthResponse getToken() throws RestClientException {
-    var entity = new HttpEntity<AuthBody>(buildBody(), buildHeader());
+    var entity = new HttpEntity<>(buildBody(), buildHeader());
     ResponseEntity<AuthResponse> response = restTemplate.exchange(Constants.AUTH_URL, HttpMethod.POST, entity, AuthResponse.class);
     return response.getBody();
   }

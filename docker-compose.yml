@@ -1,0 +1,12 @@
+version: "1.0"
+services:
+  vivelibre:
+    build: .
+    ports:
+      - "8081:8081"
+    links: 
+      - authService
+  authService: 
+    image: skeet15/auth-vivelibre
+    ports:
+      - "8080:8080"
